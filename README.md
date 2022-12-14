@@ -25,7 +25,7 @@
 03. Run pip install -r requirements.txt
 04. Setup django project and app.
 05. Run migrations & start the Django server
-06. Application accessible at "<host>:<port>"   
+06. Application accessible at "host:port"   
   
 ## Screenshot:
   ![image](https://user-images.githubusercontent.com/104200638/207544327-116c22bd-2e07-4f3f-a084-1bb58c8275d3.png)
