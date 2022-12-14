@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ChatRoom</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/chat-home.css' %}">
+
+</head>
+<body onload="myFunction()">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">ChatRoom</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+	<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+		{% if request.user.is_authenticated %}
+			<li class="nav-item">
+				<a class="nav-link" href="/">Welcome: {{ user.username }}</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/rooms/">Rooms</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/logout/">Logout</a>
+			</li>
+		{% else %}
+			<li class="nav-item">
+				<a class="nav-link" href="/signup/">Sign Up</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/login/">Login</a>
+			</li>
+		{% endif %}
+	</ul>
+  </div>
+</nav>
+
+  
+{% block content %}
+{% endblock content %}
+
+{% include "footer.html" %}
+
+{% block scripts %}
+{% endblock scripts %}
+
+</body>
+</html>

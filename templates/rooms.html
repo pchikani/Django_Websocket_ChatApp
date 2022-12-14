@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="card text-white bg-dark mb-3 mt-3" >
+	  <div class="card-header">Available Rooms</div>
+	</div>
+
+	<div class="row">
+
+		{% for room in rooms %}
+		  <div class="col-sm-6">
+			<div class="card">
+			  <div class="card-body">
+				<h5 class="card-title">Room: {{ room.name }}</h5>
+				<p class="card-text">Click below button to join the Room.</p>
+				<a href="{% url 'core:joinRoom' room.slug %}" class="btn btn-dark">Join Room</a>
+			  </div>
+			</div>
+		  </div>
+		{% endfor %}
+	  
+	</div>
+</div>
+
+
+{% endblock content %}
