@@ -1,4 +1,4 @@
-# WebSocket ChatApp
+# Django WebSocket ChatApp
 
 ## This application allows following functionality:
 
